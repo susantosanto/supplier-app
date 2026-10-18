@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ES2020",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "strict": true,
+    "types": ["google-apps-script"],
+    "lib": ["ES2021"]
+  },
+  "include": ["src/**/*", "tests/**/*"]
+}

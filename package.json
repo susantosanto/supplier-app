@@ -1,0 +1,27 @@
+{
+  "name": "supplier-app",
+  "version": "1.0.0",
+  "description": "Overview untuk manusia. (Belum diisi — menunggu hasil /idea-clarifier.)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,gs}\" tests",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node tests/run.js",
+    "check": "npm run lint && npm run typecheck && npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@google/clasp": "3.4.1",
+    "@mcpher/gas-fakes": "2.5.8",
+    "@types/google-apps-script": "2.0.13",
+    "eslint": "10.12.0",
+    "eslint-plugin-googleappsscript": "1.0.5",
+    "typescript": "7.0.2"
+  }
+}

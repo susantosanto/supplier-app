@@ -1,0 +1,15 @@
+**/**
+!**/appsscript.json
+!**/*.gs
+!**/*.html
+.git/**
+node_modules/**
+tests/**
+# Logika murni WAJIB .gs agar ter-deploy ke GAS (keputusan 2026-10-15: .js tak-terpush sebabkan ReferenceError A5-A7).
+# File .js di src/ ikut ter-push sebagai SERVER_JS — jangan taruh kode Node-only (require/module) di .js.
+**/*.md
+package.json
+package-lock.json
+tsconfig.json
+eslint.config.js
+.gitignore
