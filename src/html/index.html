@@ -181,6 +181,34 @@
     .lencana.lunas{background:var(--accent-tint);color:var(--accent)}
     .angka{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
     .data-per{font-size:12px;color:var(--mutbg);text-align:center;display:none}
+    /* ============ PANDUAN (dokumentasi di dalam aplikasi) ============ */
+    .pg-hero{background:var(--card);border:1px solid var(--accent-line);border-radius:14px;
+      padding:18px;box-shadow:var(--shadow);margin:6px 0 12px}
+    .pg-judul{font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--ink);line-height:1.3}
+    .pg-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.5}
+    .pg-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-tint);
+      border:1px solid var(--accent-line);color:var(--accent-bright);font-weight:700;font-size:12px;
+      display:flex;align-items:center;justify-content:center}
+    .pg-step{display:flex;gap:11px;align-items:flex-start;padding:6px 0}
+    .pg-step p{margin:1px 0 0;font-size:14px;color:var(--muted);line-height:1.55}
+    .pg-step b{color:var(--ink)}
+    .pg-blok{margin:10px 0;background:var(--card);border:1px solid var(--line);
+      border-radius:var(--radius);padding:0;overflow:hidden}
+    .pg-blok>summary{min-height:50px;padding:0 14px;gap:10px;justify-content:space-between;border-radius:0}
+    .pg-blok[open]>summary{background:var(--accent-tint);border-bottom:1px solid var(--line-soft)}
+    .pg-no{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--accent);margin-right:9px;flex:none}
+    .pg-caret{flex:none;width:17px;height:17px;color:var(--muted);transition:transform .18s ease}
+    .pg-blok[open]>summary .pg-caret{transform:rotate(180deg)}
+    .pg-isi{padding:13px 14px 15px}
+    .pg-isi h4{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+      margin:14px 0 6px;font-weight:700}
+    .pg-isi h4:first-child{margin-top:0}
+    .pg-isi p{font-size:14px;line-height:1.55;margin:0 0 6px}
+    .pg-isi ol,.pg-isi ul{margin:0;padding-left:20px}
+    .pg-isi li{font-size:14px;margin:5px 0;line-height:1.55}
+    .pg-tag{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:3px 9px;
+      background:var(--accent-tint);color:var(--accent);margin:0 6px 6px 0}
     /* ============ BOTTOM NAV MOBILE — SVG minimal ============ */
     nav.bawah{position:fixed;left:12px;right:12px;bottom:12px;background:var(--card);
       border:1px solid var(--line);border-radius:16px;display:flex;z-index:5;padding:6px;gap:2px;
@@ -331,6 +359,9 @@
           <div class="jam" id="top-jam">--:--</div>
         </div>
         <div class="top-kanan">
+          <button class="icon-btn" type="button" title="Panduan" onclick="location.hash='#/panduan'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a1.6 1.6 0 0 0-1.6-1.6H5.5A1.5 1.5 0 0 1 4 15.9z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a1.6 1.6 0 0 1 1.6-1.6h4.9A1.5 1.5 0 0 0 20 15.9z"/></svg>
+          </button>
           <button class="icon-btn" type="button" title="Profil" onclick="location.hash='#/profil'">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>
           </button>
@@ -386,6 +417,10 @@
         <a href="#/profil" data-rute="profil" class="nav-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>
           <span class="nav-text">Profil</span>
+        </a>
+        <a href="#/panduan" data-rute="panduan" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a1.6 1.6 0 0 0-1.6-1.6H5.5A1.5 1.5 0 0 1 4 15.9z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a1.6 1.6 0 0 1 1.6-1.6h4.9A1.5 1.5 0 0 0 20 15.9z"/></svg>
+          <span class="nav-text">Panduan</span>
         </a>
       </nav>
       <div class="side-foot">
@@ -718,6 +753,10 @@
           <p class="muted">Kunci tampilan memakai nama pengguna dan kata sandi. Ini bukan pengaman data — data tetap hanya bisa dibaca lewat akun Google owner.</p>
           <button class="kedua" type="button" id="tombol-keluar">Keluar</button>
         </div>
+        <div class="card"><h2>Panduan</h2>
+          <p class="muted">Baca cara memakai setiap menu, istilah di layar, dan langkah harian Anda.</p>
+          <button class="kedua" type="button" onclick="location.hash='#/panduan'">Buka Panduan</button>
+        </div>
         <div class="card"><h2>Diagnosa koneksi</h2>
           <p class="muted">Tes jalur ke server tanpa memuat data. Kirim hasilnya bila error berlanjut.</p>
           <p class="muted">Versi app: <b id="versi-app"></b> (pastikan sama dengan versi terbaru).</p>
@@ -727,6 +766,252 @@
           <button class="kedua" type="button" id="tombol-log">Tampilkan log teknis</button>
           <div id="ping-hasil" class="muted" style="margin-top:8px;word-break:break-all"></div>
           <textarea id="log-teknis" rows="6" readonly style="display:none;margin-top:8px;font-size:12px" placeholder="Log 20 request terakhir akan tampil di sini"></textarea>
+        </div>
+      </section>
+
+      <section class="view" id="view-panduan">
+        <div class="eyebrow">Bantuan</div>
+        <h1 class="judul">Panduan</h1>
+        <p class="subjudul">Cara memakai setiap menu, kata per kata.</p>
+
+        <div class="pg-hero">
+          <div class="pg-judul">Lima langkah yang selalu Anda jalankan</div>
+          <div class="pg-sub">Urutannya menjaga catatan Anda selalu beres: barang masuk dicatat lebih dulu, barang keluar menyusul, baru uangnya dicatat.</div>
+          <div style="margin-top:12px">
+            <div class="pg-step"><div class="pg-num">1</div><p><b>Belanja</b> — catat pembelian dari toko. Stok bertambah sendiri.</p></div>
+            <div class="pg-step"><div class="pg-num">2</div><p><b>Kirim</b> — catat barang yang keluar. Stok berkurang, piutang tercatat otomatis.</p></div>
+            <div class="pg-step"><div class="pg-num">3</div><p><b>Piutang</b> — catat setiap uang yang masuk dari pelanggan.</p></div>
+            <div class="pg-step"><div class="pg-num">4</div><p><b>Hutang</b> — bayar toko yang pembayarannya tempo.</p></div>
+            <div class="pg-step"><div class="pg-num">5</div><p><b>Laporan</b> — cek omzet, untung, dan kas Anda.</p></div>
+          </div>
+        </div>
+
+        <div class="eyebrow">Menu satu per satu</div>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 1</span>Dasbor</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Menampilkan seluruh kondisi usaha dalam satu layar, sehingga Anda tidak perlu membuka satu per satu menu untuk tahu keadaan hari ini.</p>
+            <h4>Kapan dipakai</h4>
+            <p>Setiap pagi sebelum bekerja, dan sebelum berjualan dengan pelanggan.</p>
+            <h4>Yang perlu dibaca</h4>
+            <ul>
+              <li><b>Total Nilai Usaha</b> — gabungan kas yang Anda miliki dan seluruh piutang yang belum masuk.</li>
+              <li><b>Kas Masuk / Kas Keluar</b> — uang yang benar-benar bergerak hari ini.</li>
+              <li><b>SPPG Menunggak</b> — berapa pelanggan yang belum membayar, dan sudah berapa lama.</li>
+              <li><b>Stok Tipis</b> — barang yang jumlahnya sudah di bawah batas minimum yang Anda tentukan di menu Stok.</li>
+              <li><b>Indeks Cepat</b> — ringkasan stok, piutang, dan hutang; ketuk untuk melompat ke menunya.</li>
+              <li><b>Peringatan</b> — hal yang perlu ditangani segera, misalnya pelanggan menunggak lama.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 2</span>Belanja</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Mencatat setiap pembelian dari toko. Setiap tercatat, stok barang Anda bertambah dan uang keluar tercatat sebagai kas atau hutang.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Pilih <b>Toko Supplier</b>.</li>
+              <li>Pilih <b>Item Produk</b>.</li>
+              <li>Isi <b>Qty</b> (jumlah) dan <b>Harga Beli</b>.</li>
+              <li>Pilih <b>Metode</b>: <b>Tunai</b> (dibayar langsung) atau <b>Tempo</b> (dibayar nanti).</li>
+              <li>Tekan <b>Simpan</b>. Riwayat pembelian langsung tampil di bawah form.</li>
+            </ol>
+            <h4>Catatan penting</h4>
+            <p>Jika memilih <b>Tempo</b>, hutang otomatis tercatat sebagai satu faktur lengkap dengan tanggal jatuh tempo. Cara membayarnya ada di menu <b>Hutang</b>. Isi harga beli apa adanya — untung dihitung otomatis saat pengiriman.</p>
+            <span class="pg-tag">Qty</span><span class="pg-tag">Tempo</span><span class="pg-tag">Faktur</span><span class="pg-tag">Jatuh tempo</span>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 3</span>Hutang</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Daftar uang yang Anda utang ke toko, dipecah per faktur sehingga Anda tahu persis apa yang masih harus dibayar.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Lihat daftar toko beserta <b>sisa hutang</b> per faktur.</li>
+              <li>Tekan <b>Bayar</b> pada faktur yang akan dibayar, lalu isi jumlahnya pada kolom yang muncul.</li>
+              <li>Tekan <b>Bayar Semua</b> bila faktur itu ingin dilunasi tanpa menghitung.</li>
+            </ol>
+            <h4>Yang perlu diketahui</h4>
+            <p>Sisa hutang mengikuti pembayaran yang Anda catat, bukan hitungan otomatis. Jadi catat setiap pembayaran agar angka di sini selalu benar. Faktur yang lunas otomatis hilang dari daftar.</p>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 4</span>Kirim</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Mencatat barang yang keluar dari gudang menuju pelanggan. Ini menu yang paling sering Anda pakai setiap hari.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Pilih <b>SPPG</b> (pelanggan tujuan).</li>
+              <li>Pilih <b>Item</b>.</li>
+              <li>Isi <b>Qty</b> dan <b>Harga Jual</b>.</li>
+              <li>Periksa <b>Tanggal</b>; ubah bila barang dikirim di hari lain.</li>
+              <li>Tekan <b>Simpan</b>.</li>
+            </ol>
+            <h4>Yang terjadi otomatis</h4>
+            <ul>
+              <li>Stok barang berkurang.</li>
+              <li>Harga beli, untung, dan margin tersimpan sebagai catatan permanen agar laporan tetap akurat meski harga toko berubah.</li>
+              <li>Pengiriman tercatat menjadi <b>piutang</b>, karena pengiriman selalu dibayar setelah barang diterima.</li>
+            </ul>
+            <h4>Kalau muncul “Stok kurang”</h4>
+            <p>Catatan stok di sistem lebih kecil daripada jumlah yang Anda kirim. Isi <b>Catatan override</b> berisi alasan sebenarnya (misalnya ada barang yang belum tercatat), lalu tekan <b>Simpan</b> kembali.</p>
+            <span class="pg-tag">Margin</span><span class="pg-tag">HPP</span><span class="pg-tag">Override</span>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 5</span>Piutang</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Daftar pelanggan yang sudah menerima barang tetapi belum membayar, beserta umur tagihannya.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Pilih pelanggan yang sedang membayar.</li>
+              <li>Isi <b>Jumlah</b> uang yang diterima.</li>
+              <li>Konfirmasi <b>Terima Rp …?</b>.</li>
+            </ol>
+            <h4>Yang perlu diketahui</h4>
+            <p>Uang yang Anda masukkan otomatis dialokasikan ke tagihan <b>terlama lebih dulu</b>, lalu sisanya ke tagihan berikutnya. Anda tidak perlu tahu faktur yang mana. <b>Umur tagihan</b> membantu Anda memutuskan siapa yang perlu ditagih: 1–7 hari masih wajar, di atas 30 hari sebaiknya segera dihubungi.</p>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 6</span>Stok</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Menjaga agar jumlah barang di gudang selalu sama dengan catatan, sehingga tidak ada barang hilang tanpa ketahuan.</p>
+            <h4>Empat bagian halaman ini</h4>
+            <ul>
+              <li><b>Posisi Stok</b> — jumlah setiap barang saat ini, dengan penanda <b>Tipis</b> bila di bawah batas minimum.</li>
+              <li><b>Mutasi</b> — riwayat barang masuk dan keluar beserta tanggal dan asal-usulnya.</li>
+              <li><b>Batas Stok Minimum</b> — angka minimum yang Anda tentukan sendiri agar Dasbor memberi tahu saat barang mendekati habis.</li>
+              <li><b>Opname</b> — hitung barang fisik di gudang, masukkan angkanya, lalu tekan Simpan. Aplikasi menghitung selisih dan mengoreksi stok.</li>
+            </ul>
+            <h4>Kapan dipakai</h4>
+            <p>Setiap selesai belanja untuk melihat stok, dan minimal sekali sebulan untuk opname.</p>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 7</span>Laporan</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Menjawab pertanyaan “periode ini saya untung berapa?” lengkap dengan posisi kas dan modal.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Tekan tombol periode: <b>Minggu ini</b>, <b>Minggu lalu</b>, <b>Bulan ini</b>, atau <b>Bulan lalu</b>.</li>
+              <li>Baca angka dari atas ke bawah; angka paling bawah adalah hasil akhir Anda.</li>
+              <li>Bila ada biaya lain, catat lewat form <b>Beban</b> agar ikut terhitung.</li>
+            </ol>
+            <h4>Cara membaca angkanya</h4>
+            <ul>
+              <li><b>Omzet</b> — total nilai semua pengiriman pada periode itu.</li>
+              <li><b>HPP</b> — total harga beli barang yang terjual.</li>
+              <li><b>Laba Kotor</b> — Omzet dikurangi HPP.</li>
+              <li><b>Beban</b> — biaya di luar barang: Sewa, Transport, Gaji, Listrik, Lain-lain.</li>
+              <li><b>Laba Bersih</b> — Laba Kotor dikurangi Beban. <b>Ini untung Anda.</b></li>
+              <li><b>Arus Kas</b> — uang yang benar-benar masuk dan keluar pada periode itu.</li>
+              <li><b>Modal</b> — berapa modal yang Anda pakai untuk belanja stok pada periode itu.</li>
+            </ul>
+            <h4>Kesalahan yang perlu dihindari</h4>
+            <p>Catat beban pada hari yang sama dengan kejadiannya. Beban yang dicatat setelah periode selesai tidak mengubah angka periode tersebut.</p>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 8</span>Master</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Tempat mengisi data tetap yang dipakai semua form: daftar toko, pelanggan, dan barang.</p>
+            <h4>Kapan diisi</h4>
+            <p>Satu kali di awal pemakaian, lalu setiap ada toko, pelanggan, atau barang baru. <b>Form Belanja dan Kirim tidak bisa diisi selama daftar ini masih kosong.</b></p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Buka tab <b>Toko</b>, isi nama toko, kontak, dan tempo pembayaran, lalu tekan Simpan.</li>
+              <li>Buka tab <b>SPPG</b>, isi nama pelanggan beserta kontak dan tempo pembayaran.</li>
+              <li>Buka tab <b>Item</b>, isi nama barang, satuan, batas stok minimum, dan harga jual terakhir.</li>
+              <li>Buka lagi menu <b>Belanja</b> atau <b>Kirim</b> untuk memastikan pilihan sudah muncul.</li>
+            </ol>
+            <h4>Isi apa saja</h4>
+            <ul>
+              <li><b>Toko</b> — nama toko, kontak, dan tempo pembayaran yang disepakati.</li>
+              <li><b>SPPG</b> — nama pelanggan, kontak, dan tempo pembayaran.</li>
+              <li><b>Item</b> — nama barang, satuan, isi per satuan, batas stok minimum, dan harga jual terakhir.</li>
+            </ul>
+            <h4>Nonaktifkan, bukan Hapus</h4>
+            <p>Data yang sudah tidak dipakai sebaiknya dinonaktifkan: tidak muncul lagi di pilihan form, tetapi seluruh riwayat transaksi lamanya tetap utuh dan tetap bisa dibuka.</p>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Menu 9</span>Profil</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Berisi identitas usaha Anda, keamanan layar, dan alat bantu saat aplikasi mengalami masalah.</p>
+            <h4>Isi halaman ini</h4>
+            <ul>
+              <li><b>Profil Supplier</b> — nama, kontak, dan alamat yang tampil di aplikasi.</li>
+              <li><b>Sesi &amp; Keamanan</b> — tekan <b>Keluar</b> untuk mengunci layar kembali, misalnya ketika HP dipinjam orang lain.</li>
+              <li><b>Diagnosa Koneksi</b> — <b>Tes koneksi server</b> untuk memastikan aplikasi bisa membaca data, <b>Tes simpan server</b> untuk memastikan pencatatan berhasil, dan <b>Siapkan Spreadsheet</b> yang cukup diklik satu kali bila ada tabel baru yang belum tersedia.</li>
+              <li><b>Versi App</b> — nomor versi yang sedang Anda pakai. Sebutkan nomor ini saat melapor masalah.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="pg-blok">
+          <summary><span><span class="pg-no">Layar</span>Masuk</span><svg class="pg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="pg-isi">
+            <h4>Gunanya untuk Anda</h4>
+            <p>Mencegah layar langsung menampilkan angka bisnis ketika aplikasi dibuka. Layar ini hanya mengunci tampilan; data tetap hanya bisa dibaca dari akun Anda.</p>
+            <h4>Langkah memakai</h4>
+            <ol>
+              <li>Isi <b>Nama pengguna</b> dan <b>Kata sandi</b>, lalu tekan <b>Masuk</b>.</li>
+              <li>Centang <b>Ingat saya 7 hari</b> agar tidak perlu mengetik ulang selama seminggu.</li>
+              <li>Bila lupa sandi, tekan ikon mata untuk menampilkan sandi yang diketik.</li>
+            </ol>
+            <h4>Meninggalkan aplikasi dengan aman</h4>
+            <p>Tekan <b>Profil → Keluar</b>. Layar kunci akan muncul kembali dan catatan transaksi di layar akan dihapus.</p>
+          </div>
+        </details>
+
+        <div class="eyebrow">Rutinitas</div>
+        <div class="card">
+          <h2>Setiap hari</h2>
+          <ul style="margin:0;padding-left:18px">
+            <li>Buka <b>Dasbor</b>: cek kas, pelanggan menunggak, barang menipis.</li>
+            <li>Catat semua pengiriman hari ini di <b>Kirim</b>.</li>
+            <li>Catat pembayaran yang masuk di <b>Piutang</b>.</li>
+          </ul>
+          <h2 style="margin-top:14px">Setiap akhir minggu</h2>
+          <ul style="margin:0;padding-left:18px">
+            <li>Buka <b>Laporan → Minggu ini</b>: cek omzet, laba kotor, dan arus kas.</li>
+            <li>Catat semua beban minggu ini (bensin, listrik, dan lainnya).</li>
+            <li>Bayar toko yang tempo-nya jatuh di menu <b>Hutang</b>.</li>
+          </ul>
+          <h2 style="margin-top:14px">Setiap akhir bulan</h2>
+          <ul style="margin:0;padding-left:18px">
+            <li>Bandingkan <b>Bulan ini</b> dengan <b>Bulan lalu</b>.</li>
+            <li>Lakukan <b>Opname</b> di menu <b>Stok</b>.</li>
+            <li>Tambahkan toko, pelanggan, atau barang baru di <b>Master</b>.</li>
+          </ul>
+        </div>
+
+        <div class="card"><h2>Kalau ada masalah</h2>
+          <table><thead><tr><th>Yang terjadi</th><th>Yang harus dilakukan</th></tr></thead><tbody>
+            <tr><td>Pilihan di form kosong</td><td>Data Master belum diisi. Buka Master dan tambahkan toko, pelanggan, atau barang.</td></tr>
+            <tr><td>Muncul “Stok kurang”</td><td>Isi Catatan override pada form Kirim, atau koreksi stok lewat Opname.</td></tr>
+            <tr><td>Angka laporan terasa tidak sesuai</td><td>Beban kemungkinan dicatat setelah periode ditutup. Catat beban sesuai tanggal kejadiannya.</td></tr>
+            <tr><td>Aplikasi lambat atau error</td><td>Buka Profil → Tes koneksi server, lalu catat hasilnya untuk dilaporkan.</td></tr>
+            <tr><td>Ingin mengunci HP</td><td>Tekan Profil → Keluar.</td></tr>
+          </tbody></table>
         </div>
       </section>
     </main>
@@ -776,8 +1061,8 @@
 
   <script>
     "use strict";
-    var RUTE = ["dashboard", "belanja", "kirim", "piutang", "stok", "laporan", "hutang", "master", "profil"];
-    var VERSI_APP = "2026-10-18 #0326-spendflo";
+    var RUTE = ["dashboard", "belanja", "kirim", "piutang", "stok", "laporan", "hutang", "master", "profil", "panduan"];
+    var VERSI_APP = "2026-10-18 #0327-panduan";
     /* ===== GATE LOGIN (Sprint 006) ================================
        Kunci TAMPILAN di klien, BUKAN kontrol akses. Pengaman data tetap
        guardOwner() di server + aturan "Who has access = Only myself".
@@ -948,7 +1233,7 @@
       var u = el("gate-user");
       if (u) setTimeout(function () { u.focus(); }, 60);
     }
-    var RUTE_LAINNYA = ["stok", "hutang", "laporan", "master", "profil"];
+    var RUTE_LAINNYA = ["stok", "hutang", "laporan", "master", "profil", "panduan"];
     var INFO_TEMA = {
       matahari: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
       bulan: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.5A8 8 0 0 1 10.5 4 8 8 0 1 0 20 13.5z"/></svg>'
@@ -958,6 +1243,7 @@
       hutang: { nama: "Hutang", desc: "Hutang tempo ke toko", ikon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10.5h18"/><path d="M7 15h4"/></svg>' },
       laporan: { nama: "Laporan", desc: "Kas & margin per periode", ikon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20V11"/><path d="M10 20V4"/><path d="M16 20v-6"/><path d="M2.5 20.5h19"/></svg>' },
       master: { nama: "Master", desc: "Toko, SPPG & item", ikon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>' },
+      panduan: { nama: "Panduan", desc: "Cara pakai semua menu", ikon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a1.6 1.6 0 0 0-1.6-1.6H5.5A1.5 1.5 0 0 1 4 15.9z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a1.6 1.6 0 0 1 1.6-1.6h4.9A1.5 1.5 0 0 0 20 15.9z"/></svg>' },
       profil: { nama: "Profil", desc: "Identitas supplier", ikon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>' }
     };
     var MASTER = null;
@@ -1687,7 +1973,8 @@
       laporan: muatLaporan,
       hutang: muatHutang,
       master: muatMasterView,
-      profil: muatProfil
+      profil: muatProfil,
+      panduan: muatPanduan
     };
 
     function bukaSheetLainnya() {
@@ -1841,6 +2128,8 @@
       el("m-batal").style.display = "none";
     }
 
+    // Halaman panduan statis: tidak memuat data server.
+    function muatPanduan() { return Promise.resolve(); }
     async function muatProfil() {
       var p = await runTahan_("getProfil", []);
       p = p || {};
@@ -1868,7 +2157,8 @@
         laporan: { title: "Laporan", subtitle: "Kas & Margin" },
         hutang: { title: "Hutang", subtitle: "Hutang ke Toko" },
         master: { title: "Master Data", subtitle: "Toko, SPPG, Item" },
-        profil: { title: "Profil", subtitle: "Informasi Supplier" }
+        profil: { title: "Profil", subtitle: "Informasi Supplier" },
+        panduan: { title: "Panduan", subtitle: "Cara pakai aplikasi" }
       };
       var headerInfo = titles[rute] || titles.dashboard;
       var t = el("desktop-header-title");
