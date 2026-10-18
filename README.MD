@@ -1,6 +1,6 @@
 # SpendFlo
 
-**Aplikasi Pengadaan & Pengiriman** — sistem operasional untuk pemasok bahan pangan sekolah: mencatat belanja ke toko, mengirim barang ke pelanggan SPPG, memantau stok, piutang, hutang, dan menghitung laba bersih.
+**Aplikasi Pengadaan & Pengiriman** - sistem operasional untuk pemilik usaha yang membeli barang dari beberapa toko lalu mengirimkannya ke pelanggan: mencatat belanja, pengiriman, stok, hutang, piutang, sampai laba bersih.
 
 Berjalan langsung di **Google Apps Script + Google Sheets**. Tanpa server, tanpa database eksternal, tanpa biaya bulanan: data tinggal di Spreadsheet milik pemilik sendiri.
 
@@ -8,7 +8,7 @@ Berjalan langsung di **Google Apps Script + Google Sheets**. Tanpa server, tanpa
 
 ## Untuk siapa
 
-Pemilik usaha pemasok kebutuhan pokok sekolah (program makan gratis): satu orang yang sebelumnya mencatat belanja, pengiriman, dan pembayaran di buku atau chat. Semua cukup dilakukan dari HP.
+Pemilik usaha yang sebelumnya mencatat belanja, pengiriman, dan pembayaran di buku atau chat — distributor, pemasok, atau pedagang grosir yang menjual ke beberapa pelanggan tetap. Semua cukup dilakukan dari HP.
 
 ---
 
@@ -16,17 +16,28 @@ Pemilik usaha pemasok kebutuhan pokok sekolah (program makan gratis): satu orang
 
 | Modul | Isi |
 |---|---|
-| **Dasbor** | Total nilai usaha (kas + piutang), kas masuk/keluar hari ini, SPPG menunggak, stok tipis, indeks cepat stok/piutang/hutang, peringatan |
+| **Dasbor** | Total nilai usaha (kas + piutang), kas masuk/keluar hari ini, Pelanggan menunggak, stok tipis, indeks cepat stok/piutang/hutang, peringatan |
 | **Belanja** | Pembelian ke toko (tunai/tempo), riwayat, **sisa hutang per faktur** + bayar per faktur / bayar semua (alokasi FIFO) |
-| **Kirim** | Pengiriman ke SPPG, harga jual, HPP, margin otomatis, catatan override saat stok kurang |
-| **Piutang** | Tagihan per SPPG + aging, pembayaran dengan alokasi ke faktur tertua, status lunas/belum |
+| **Kirim** | Pengiriman ke pelanggan, harga jual, HPP, margin otomatis, catatan override saat stok kurang |
+| **Piutang** | Tagihan per pelanggan + umur tagihan, pembayaran dengan alokasi ke faktur tertua, status lunas/belum |
 | **Hutang** | Sisa per faktur ke toko, form bayar inline, alokasi idempoten |
 | **Stok** | Posisi stok per item, mutasi, batas stok minimum, stock opname + koreksi |
 | **Laporan** | Omzet → HPP → laba kotor → beban → **laba bersih**, modal belanja stok, arus kas, margin per item. Preset: Minggu ini/lalu, Bulan ini/lalu |
 | **Beban** | Catatan pengeluaran (Sewa/Transport/Gaji/Listrik/Lain-lain) per tanggal — masuk sebagai pengurang laba |
-| **Master** | CRUD Toko, SPPG, Item (nonaktifkan, bukan hapus) |
+| **Master** | CRUD Toko, Pelanggan, Item (nonaktifkan, bukan hapus) |
 | **Profil** | Identitas supplier, tes koneksi server, tombol "Siapkan Spreadsheet" (tambah tab baru) |
 | **Layar login** | Kunci tampilan 7 hari (`admin` / `admin`) — bukan pengaman data, hanya mencegah layar terbuka di HP yang ditinggal |
+
+---
+
+## Panduan pengguna (non-teknis)
+
+Untuk pemilik/operator yang memakai aplikasi sehari-hari — **kapan buka menu apa, apa yang diisi, dan
+arti angkanya**, lengkap dengan diagram alur (Mermaid + versi gambar PNG di `docs/panduan/`):
+
+**[`docs/PANDUAN-ALUR.MD`](docs/PANDUAN-ALUR.MD)** — alur harian, alur belanja & hutang, alur
+kirim & piutang, cara menghitung laba, opname, rutinitas mingguan, kamus istilah, dan kesalahan
+yang sering terjadi.
 
 ---
 
