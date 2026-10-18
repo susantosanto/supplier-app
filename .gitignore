@@ -7,6 +7,7 @@ node_modules/
 gate-*.png
 logo-*.png
 spendflo-*.png
+panduan-*.png
 
 # Berisi ID Spreadsheet + email owner: sengaja TIDAK dipublikasikan ke repo publik
-IDENTITAS-LOKAL.mdpanduan-*.png
+IDENTITAS-LOKAL.md
