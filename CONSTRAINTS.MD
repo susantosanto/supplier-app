@@ -8,6 +8,7 @@ Last reviewed: 2026-10-10 by @owner
 - No unimplemented stubs: `throw new Error("Not implemented")`, empty `catch {}`, `TODO` standing where implementation should be
 - No skipped or deleted tests without a reason in the commit message
 - No secrets in source (termasuk `.clasprc.json`, `.clasp.json`, `OWNER_EMAIL` hardcoded)
+- **No identifier privat di commit** (bertanggal 2026-10-18): `src/config.gs` memuat `SPREADSHEET_ID` asli di working tree lokal karena dibutuhkan `clasp push`; versi yang **ter-commit ke repo publik** harus bernilai `ID-SPREADSHEET-DIHAPUS-DI-REPO-PUBLIK`. Email owner & ID script tidak boleh masuk file mana pun. Sebelum `git add`, telusuri `git diff --cached` untuk pola `SPREADSHEET_ID`, `gmail.com`, dan `Script ID`. Cek otomatis = **usul Sprint 007** (secret scanner / gitleaks pre-commit).
 - This file does not get weakened to make a change pass
 
 ## Enforced with numbers
